@@ -1,0 +1,19 @@
+{% extends 'base/base.html' %}
+{% block content %}
+    <section id="edit-page" class="auth">
+        <div class="container">
+            <h1 id="delete-message">Are you sure you want to delete {{ game.title }}?</h1>
+            <div class="m-auto d-flex justify-content-center">
+                <div class="m-2">
+                    <form method="post" action="{% url 'delete game' game.id%}">
+                        {% csrf_token %}
+                        <input type="submit" value="Confirm" class="btn btn-danger"/>
+                    </form>
+                </div>
+                <div class="m-2">
+                    <a class="btn btn-primary" href="javascript:history.back()">No, go back</a>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

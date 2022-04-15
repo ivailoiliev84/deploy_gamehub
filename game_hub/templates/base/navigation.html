@@ -1,0 +1,33 @@
+<header>
+    <h1><a class="home" href="{% url 'home' %}">GamesPlay</a></h1>
+    <h1><a class="home" href="{% url 'home' %}">Shop</a></h1>
+    <nav>
+    <a href="{% url 'contacts' %}">Contacts</a>
+        {% if request.user.is_authenticated %}
+            <div id="nav-size">
+                <a href="{% url 'catalogue list' %}">Gallery</a>
+            </div>
+
+            <div id="user">
+                <a href="{% url 'create game' %}">Create Game</a>
+            </div>
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                    {{ request.user }}
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                    <li><a class="dropdown-item" href="{% url 'my games' %}">My Games</a></li>
+                    <li><a class="dropdown-item" href="{% url 'profile' %}">My Profile</a></li>
+                    <li><a class="dropdown-item" href="{% url 'logout' %}">Logout</a></li>
+                </ul>
+            </div>
+        {% else %}
+
+            <div id="guest">
+                <a href="{% url 'login' %}">Login</a>
+                <a href="{% url 'register' %}">Register</a>
+            </div>
+        {% endif %}
+    </nav>
+</header>

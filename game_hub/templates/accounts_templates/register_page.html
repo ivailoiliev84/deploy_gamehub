@@ -1,0 +1,17 @@
+{% extends 'base/base.html' %}
+{% block content %}
+    <section id="register-page" class="content auth">
+        <form id="register" method="post" action="{% url 'register' %}">
+            {% csrf_token %}
+            <div class="container">
+                <div class="brand-logo"></div>
+                <h1>Register</h1>
+                {{ form }}
+                <input class="btn submit" type="submit" value="Register">
+                <p class="field">
+                    <span>If you already have profile click <a href="{% url 'login' %}">here</a></span>
+                </p>
+            </div>
+        </form>
+    </section>
+{% endblock %}

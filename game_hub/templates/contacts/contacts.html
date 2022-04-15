@@ -1,0 +1,41 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block content %}
+
+    <section id="game-details">
+        <h1>Contacts</h1>
+        <div class="info-section">
+
+            <div class="game-header">
+                {% if profile.profile_picture %}
+                    <img class="game-img" src="{{ profile.profile_picture.url }}" alt=""/>
+                {% else %}
+                    <img class="game-img" src="{% static 'images/earth.jpeg' %}" alt=""/>
+                {% endif %}
+
+                <h3>GameHub International Game Company</h3>
+                <div id="profile_font">
+                    <h3>phone: +359 222 222 333</h3>
+                    <h3>email: gamehub@abv.bg</h3>
+                    <h3>address: Sofia The Mall</h3>
+                </div>
+            </div>
+
+        <h2 class="aboutus">About Us</h2>
+            <p class="text">
+                GameHub Entertainment, Inc. is an American video game developer and publisher based in Irvine,
+                California. A subsidiary of Activision GameHub, the company was founded on February 8, 1991,
+                under the name Silicon & Synapse, Inc. by three graduates of the University of California,
+                Los Angeles:[3] Michael Morhaime, Frank Pearce and Allen Adham. The company originally
+                concentrated on the creation of game ports for other studios' games before beginning development
+                of their own software in 1993 with games like Rock n' Roll Racing and The Lost Vikings. In 1993,
+                the company became Chaos Studios, Inc., and eventually GameHub Entertainment after being acquired by
+                distributor Davidson & Associates. Shortly thereafter, GameHub released Warcraft: Orcs & Humans.
+            <div class="buttons">
+                <h3>Email Us</h3>
+            </div>
+        </div>
+
+    </section>
+
+{% endblock %}

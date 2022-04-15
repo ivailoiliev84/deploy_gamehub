@@ -1,0 +1,70 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block content %}
+    <section id="game-details">
+        <h1>Game Details</h1>
+        <div class="info-section">
+            <div class="game-header">
+                {% if game.image %}
+                        <img src="{{ game.image.url }}">
+                        {% else %}
+                             <img src="{% static 'images/icon-gamepad-2.png' %}">
+                        {% endif %}
+                <h2>Publication owner: {{ user }}</h2>
+                <h1>{{ game.title }}</h1>
+                <h1>{{ game.category }}</h1>
+                {% if not is_owner %}
+                    <div>
+                        <h3>Like count: {{ like_game_count }}</h3>
+                        <a href="{% url 'like game' game.id %}">Like</a>
+                    </div>
+                {% else %}
+                    <div>
+                        <h3>Like count: {{ like_game_count }}</h3>
+                    </div>
+                {% endif %}
+            </div>
+            <p class="text">
+                Description: {{ game.description }}
+            </p>
+            <div class="details-comments">
+                <h2>Comments:</h2>
+                {% if comments %}
+                    <ul>
+                        {% for comment in comments %}
+                            <li class="comment">
+                                <p>User: {{ comment.user }}</p>
+                            </li>
+
+                            <li class="comment">
+                                <p>Content: {{ comment.comment }} <a href="#">delete</a></p>
+
+                            </li>
+                        {% endfor %}
+                    </ul>
+                {% else %}
+                    <p class="no-comment">No comments.</p>
+                {% endif %}
+            </div>
+            {% if is_owner %}
+                <div class="buttons">
+                    <a href="{% url 'game edit' game.id %}" class="button">Edit</a>
+                    <a href="{% url 'delete game' game.id %}" class="button">Delete</a>
+                </div>
+            {% endif %}
+        </div>
+        {% if not is_owner %}
+            <article class="create-comment">
+                <label>Add new comment:</label>
+                <form action="{% url 'create comment' game.id %}" method="post" class="form">
+
+                    {% csrf_token %}
+                    {{ form }}
+{#                    <textarea name="comment" placeholder="Comment......"></textarea>#}
+                    <input class="btn submit" type="submit" value="Add Comment">
+
+                </form>
+            </article>
+        {% endif %}
+    </section>
+{% endblock %}

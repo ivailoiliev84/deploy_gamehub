@@ -1,0 +1,16 @@
+{% extends 'base/base.html' %}
+{% block content %}
+    <section id="create-page" class="auth">
+        <form id="create" action="{% url 'profile edit' profile.id %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="container">
+                <h1><a href="{% url 'change password' %}">
+                    <h1>Change Password<h2>click here</h2></h1>
+                </a></h1>
+                <h1>Edit Profile</h1>
+                {{ form }}
+                <input class="btn submit" type="submit" value="Create Game">
+            </div>
+        </form>
+    </section>
+{% endblock %}

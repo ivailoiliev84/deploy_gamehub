@@ -1,0 +1,26 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block content %}
+    <section id="catalog-page">
+        <h1>All Games</h1>
+        {% if games %}
+            {% for game in games %}
+                <div class="allGames">
+                    <div class="allGames-info">
+                        {% if game.image %}
+                        <img src="{{ game.image.url }}">
+                        {% else %}
+                             <img src="{% static 'images/icon-gamepad-2.png' %}">
+                        {% endif %}
+                        <h6>{{ game.category }}</h6>
+                        <h2>{{ game.title }}</h2>
+                        <a href="{% url 'game details' game.id %}" class="details-button">Details</a>
+                    </div>
+                </div>
+            {% endfor %}
+        {% else %}
+            <h3 class="no-articles">No articles yet</h3>
+        {% endif %}
+    </section>
+    {% include 'base/pagination.html'%}
+{% endblock %}
