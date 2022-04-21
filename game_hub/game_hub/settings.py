@@ -11,6 +11,9 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 import os.path
 from pathlib import Path
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -45,6 +48,7 @@ PROJECT_APPS = (
     'game_hub.accounts',
     'game_hub.games',
     'game_hub.information',
+    'cloudinary',
 )
 
 INSTALLED_APPS = DJANGO_APPS + PROJECT_APPS
@@ -181,3 +185,33 @@ MEDIA_ROOT = os.path.join(BASE_DIR / 'media')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = 'accounts.GameHubUser'
+
+
+
+
+CELERY_BROKER_URL = 'redis://localhost:6379'
+CELERY_RESULT_BACKEND = 'redis://localhost:6379'
+CELERY_ACCEPT_CONTENT = ['application/json']
+CELERY_TASK_SERIALIZER = 'json'
+CELERY_RESULT_SERIALIZER = 'json'
+
+
+
+
+
+# email settings
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'gamehub.test.heroku@gmail.com'
+EMAIL_HOST_PASSWORD ='gamehub.test.heroku.123'
+
+
+
+cloudinary.config(
+    cloud_name='gamehub123',
+    api_key=415394751384354,
+    api_secret='V2s79l_rgcAlRz0YKsImpDpnJl0',
+    secure=True,
+)

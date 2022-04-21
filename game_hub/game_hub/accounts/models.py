@@ -3,6 +3,7 @@ from django.contrib.auth.hashers import make_password
 from django.contrib.auth.models import User, PermissionsMixin
 from django.core.validators import MinLengthValidator
 from django.db import models
+from cloudinary.models import CloudinaryField
 
 # Create your models here.
 from validators.custom_validators import validator_only_letters_numbers
@@ -99,8 +100,8 @@ class Profile(models.Model):
         )
     )
 
-    profile_picture = models.ImageField(
-        upload_to='profile_pictures',
+    profile_picture = CloudinaryField(
+        # upload_to='profile_pictures',
         blank=True,
         null=True
 
@@ -126,4 +127,4 @@ class Profile(models.Model):
         return f'{self.first_name} {self.last_name}'
 
 
-from .signals import *
+

@@ -1,7 +1,7 @@
 from django.contrib.auth import get_user_model
 from django.core.validators import MinLengthValidator, MaxValueValidator, MinValueValidator
 from django.db import models
-
+from cloudinary.models import CloudinaryField
 # Create your models here.
 from game_hub.accounts.models import GameHubUser
 from validators.custom_validators import validator_only_letters_numbers, ValidatorMaxSizeInMB
@@ -53,15 +53,11 @@ class Game(models.Model):
         )
     )
 
-    image = models.ImageField(
+    image = CloudinaryField(
         blank=True,
-        null=True,
-        upload_to='game_images',
-        validators=(
-            ValidatorMaxSizeInMB(IMAGE_MAX_SIZE),
-        )
-
+        null=True
     )
+
     description = models.TextField(
         max_length=DESCRIPTION_TEXT_FIELD_MAX_LENGTH,
         blank=True,
