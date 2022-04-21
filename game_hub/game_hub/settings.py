@@ -103,27 +103,27 @@ WSGI_APPLICATION = 'game_hub.wsgi.application'
 # }
 
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'd15a56el7n7kvn',
-        'USER': 'ijytbgljuhhryo',
-        'PASSWORD': '6b55da12b34a698b0537d2d779c23392fa171cba83bf946bdffe605f05aa850e',
-        'HOST': 'ec2-52-18-116-67.eu-west-1.compute.amazonaws.com',
-        'PORT': '5432',
-    }
-}
-
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': os.environ.get('DB_NAME'),
-#         'USER': os.environ.get('DB_USER'),
-#         'PASSWORD': os.environ.get('DB_PASSWORD'),
-#         'HOST': os.environ.get('DB_HOST'),
-#         'PORT': os.environ.get('DB_PORT'),
+#         'NAME': 'd15a56el7n7kvn',
+#         'USER': 'ijytbgljuhhryo',
+#         'PASSWORD': '6b55da12b34a698b0537d2d779c23392fa171cba83bf946bdffe605f05aa850e',
+#         'HOST': 'ec2-52-18-116-67.eu-west-1.compute.amazonaws.com',
+#         'PORT': '5432',
 #     }
 # }
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': os.environ.get('DATABASE_NAME'),
+        'USER': os.environ.get('DATABASE_USER'),
+        'PASSWORD': os.environ.get('DATABASE_PASSWORD'),
+        'HOST': os.environ.get('DATABASE_HOST'),
+        'PORT': os.environ.get('DATABASE_PORT'),
+    }
+}
 
 CACHES = {
     'default': {
