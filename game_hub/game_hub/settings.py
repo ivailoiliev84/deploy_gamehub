@@ -88,12 +88,12 @@ WSGI_APPLICATION = 'game_hub.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 
 # DATABASES = {
 #     'default': {
@@ -107,16 +107,16 @@ DATABASES = {
 # }
 
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'd3vpjvnuh1kbsj',
-#         'USER': 'ropyswnbsblpse',
-#         'PASSWORD': '531c56c728a435dcaaccdb5f3c8c17845aa6846a01f7f427bd172f1a63d76b10',
-#         'HOST': 'ec2-34-247-72-29.eu-west-1.compute.amazonaws.com',
-#         'PORT': '5432',
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'd3vpjvnuh1kbsj',
+        'USER': 'ropyswnbsblpse',
+        'PASSWORD': '531c56c728a435dcaaccdb5f3c8c17845aa6846a01f7f427bd172f1a63d76b10',
+        'HOST': 'ec2-34-247-72-29.eu-west-1.compute.amazonaws.com',
+        'PORT': '5432',
+    }
+}
 
 # DATABASES = {
 #     'default': {
