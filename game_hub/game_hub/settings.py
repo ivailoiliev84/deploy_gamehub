@@ -110,10 +110,10 @@ WSGI_APPLICATION = 'game_hub.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'd490eurdjg2dhf',
-        'USER': 'pctxvrhxshvvgi',
-        'PASSWORD': '8372076cccc93bedd792535e9e2d4acb746cec839b5f008ac10ef38d9960dffc',
-        'HOST': 'ec2-52-18-116-67.eu-west-1.compute.amazonaws.com',
+        'NAME': 'd3vpjvnuh1kbsj',
+        'USER': 'ropyswnbsblpse',
+        'PASSWORD': '531c56c728a435dcaaccdb5f3c8c17845aa6846a01f7f427bd172f1a63d76b10',
+        'HOST': 'ec2-34-247-72-29.eu-west-1.compute.amazonaws.com',
         'PORT': '5432',
     }
 }
