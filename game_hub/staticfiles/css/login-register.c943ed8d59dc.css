@@ -5,7 +5,7 @@
     border-radius: 20px;
     padding: 40px;
     box-sizing: border-box;
-     background-image: url("../images/3.jpg");
+     background-image: url("../images/3.e5b45a1e07ce.jpg");
     /*box-shadow: 0px 0px 32px 0px #49535e, -14px -14px 20px #191c21;*/
 }
 
@@ -16,7 +16,7 @@
     border-radius: 20px;
     padding: 40px;
     box-sizing: border-box;
-    background-image: url("../images/3.jpg");
+    background-image: url("../images/3.e5b45a1e07ce.jpg");
     box-shadow: 0px 0px 32px 0px #49535e, -14px -14px 20px #191c21;
 }
 
@@ -27,7 +27,7 @@
 .brand-logo {
     height: 100px;
     width: 100px;
-    background: url("../images/icon-gamepad-2.png");
+    background: url("../images/icon-gamepad-2.435ce4c0fed5.png");
     margin: auto;
     border-radius: 50%;
     box-sizing: border-box;
