@@ -52,6 +52,7 @@ class GameDetailsView(LoginRequiredMixin, view.DetailView):
         context['is_owner'] = game.user == self.request.user
         context['comments'] = game.comment_set.all()
         context['user'] = self.request.user
+        context['game_owner'] = game.user
         context['like_game_count'] = game.likegame_set.all().count()
 
         return context

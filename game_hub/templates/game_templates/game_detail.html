@@ -10,7 +10,7 @@
                         {% else %}
                              <img src="{% static 'images/icon-gamepad-2.png' %}">
                         {% endif %}
-                <h2>Publication owner: {{ user }}</h2>
+                <h2>Publication owner: {{ game_owner }}</h2>
                 <h1>{{ game.title }}</h1>
                 <h1>{{ game.category }}</h1>
                 {% if not is_owner %}
