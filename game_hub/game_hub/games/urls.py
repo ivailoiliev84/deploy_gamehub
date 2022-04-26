@@ -1,7 +1,7 @@
 from django.urls import path
 
 from game_hub.games.views import HomeView, CatalogueListView, \
-    create_comment, GameMyGames, create_like, GameCreateView, GameDetailsView, GameEditView, DeleteGameView
+    create_comment, GameMyGames, create_like, GameCreateView, GameDetailsView, GameEditView, DeleteGameView, delete_comment
 
 urlpatterns = (
     path('', HomeView.as_view(), name='home'),
@@ -14,6 +14,7 @@ urlpatterns = (
 
 
     path('comment/<int:pk>', create_comment, name='create comment'),
+    path('comment/delete/<int:pk>', delete_comment, name='delete comment'),
     path('like-game/<int:pk>', create_like, name='like game'),
 
 )

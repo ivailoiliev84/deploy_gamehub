@@ -1,7 +1,11 @@
+from math import gamma
+from multiprocessing import context
 import os
+from telnetlib import GA
+
 
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.shortcuts import redirect
+from django.shortcuts import redirect, render
 from django.urls import reverse_lazy
 
 from django.views import generic as view
@@ -104,6 +108,16 @@ def create_comment(request, pk):
         return redirect('game details', game.id)
 
 
+
+def delete_comment(request, pk):
+    comment = Comment.objects.get(pk=pk)
+    coment_game_id = comment.game_id
+    game = Game.objects.get(pk=coment_game_id)
+    comment.delete()
+    return redirect('game details', game.id)
+
+
+        
 def create_like(request, pk):
     game = Game.objects.get(pk=pk)
     user_who_like = game.likegame_set.filter(user_id=request.user.id).first()

@@ -37,7 +37,11 @@
                             </li>
 
                             <li class="comment">
-                                <p>Content: {{ comment.comment }} <a href="#">delete</a></p>
+                                <p>Content: {{ comment.comment }} 
+                                    {% if comment.user_id == request.user.id%}
+                                    <a id="delete_comment" href="{% url 'delete comment' comment.id%}">delete</a>
+                                    {%endif%}
+                                </p>
 
                             </li>
                         {% endfor %}

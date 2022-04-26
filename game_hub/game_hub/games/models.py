@@ -71,12 +71,12 @@ class Game(models.Model):
 
 class Comment(models.Model):
     COMMENT_MAX_LENGTH = 40
-    COMMENT_MIN_LENGTH = 3
+    COMMENT_MIN_LENGTH = 2
     comment = models.TextField(
         max_length=COMMENT_MAX_LENGTH,
         validators=(
             MinLengthValidator(COMMENT_MIN_LENGTH),
-            validator_only_letters_numbers,
+            
         )
 
     )

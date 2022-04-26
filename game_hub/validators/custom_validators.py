@@ -8,6 +8,8 @@ def validator_only_letters_numbers(value):
             raise ValidationError('Ensure this value contains only letters, numbers, and underscore.')
 
 
+
+
 @deconstructible
 class ValidatorMaxSizeInMB:
     def __init__(self, max_size):
