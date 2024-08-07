@@ -1,1 +1,3 @@
 # GameHub
+
+Education project!
